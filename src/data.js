@@ -17,12 +17,12 @@ player={playtime:0,
 		updateRate:20},
 	version:0.1,
 	beta:3.1}
-const timeframes={year:31556952,
-	month:2629746,
-	day:86400,
-	hour:3600,
-	minute:60,
-	second:1}
+const timeframes={年:31556952,
+	月:2629746,
+	日:86400,
+	小時:3600,
+	分鐘:60,
+	秒:1}
 const notationArray=['Scientific','Engineering','Standard','Logarithm']
 const haListU=['','U','D','T','Q','Qi','S','Sp','O','N']
 const haListT=['','D','V','T','Q','Qi','S','Sp','O','N']
