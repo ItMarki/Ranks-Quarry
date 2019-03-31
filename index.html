@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
 	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
-	<title>Ranks: Quarry</title>
+	<title>階級: 礦場</title>
 	<link href='src/theme.css' rel='stylesheet'>
 	<script type="text/javascript" src="src/break_infinity.min.js"></script>
 	<script type="text/javascript" src="src/data.js"></script>
@@ -10,28 +10,28 @@
 </head>
 <body onload='loadGame()'>
 	<div id='loading'>
-		<div style='position:absolute;top:50%;transform:translate(0,-50%);background-color:rgba(25,25,25,0.25);width:100%;text-align:center'><text style='font-size:72px'><b style='color:#00e500'>Ranks</b>: Quarry</text><br>Game is now loading, please wait...</div>
+		<div style='position:absolute;top:50%;transform:translate(0,-50%);background-color:rgba(25,25,25,0.25);width:100%;text-align:center'><text style='font-size:72px'><b style='color:#00e500'>階級</b>: 礦場</text><br>遊戲加載中，請等待……</div>
 		<div style='position:absolute;bottom:0;left:0;color:rgba(25,25,25,0.25)'>v0.1 beta 3.1<br>2018 Aarex T.</div>
 	</div>
 	<div id='mainGame' style='display:none'>
 		<div id='header'>
-			<table><tr><td><button onclick='switchTab("quarry")'>Quarry</button></td>
-			<td><button class='darkButton' onclick='switchTab("statistics")'>Statistics</button></td>
-			<td><button onclick='switchTab("options")'>Options</button></td>
-			<td><button class='darkButton' onclick='switchTab("about")'>About</button></td></tr></table>
+			<table><tr><td><button onclick='switchTab("quarry")'>礦場</button></td>
+			<td><button class='darkButton' onclick='switchTab("statistics")'>統計</button></td>
+			<td><button onclick='switchTab("options")'>選項</button></td>
+			<td><button class='darkButton' onclick='switchTab("about")'>關於</button></td></tr></table>
 		</div>
 		<div id='tab_quarry'>
-			<div id='stone'><b id='oreName'>Stone</b><br>
+			<div id='stone'><b id='oreName'>石</b><br>
 				<div id='stoneDisplay'><button id='stoneDisplay_button' onclick='mineStone()' onkeydown='unfocusStone()'></button></div>
 				<b>HP</b>: <text id='hp'>10/10</text><br>
-				<b>Power</b>: <text id='power'>1</text><br>
-				<b>Stone</b>: <text id='stoneAmount'>1</text></div>
-			<div id='frame_ores' style='position:fixed;left:0;top:48px'><text style='font-size:16px'><b>Coins</b>: <text id='coins'>1</text></text><br><button id='sell' onclick='sell()'>Sell ores</button><div id='ores'></div></div>
+				<b>力量</b>: <text id='power'>1</text><br>
+				<b>石</b>: <text id='stoneAmount'>1</text></div>
+			<div id='frame_ores' style='position:fixed;left:0;top:48px'><text style='font-size:16px'><b>錢幣</b>: <text id='coins'>1</text></text><br><button id='sell' onclick='sell()'>售礦</button><div id='ores'></div></div>
 			<div id='frame_upgrades' style='position:fixed;right:0;top:48px;text-align:right'>
-				<b style='font-size:24px'>Upgrades</b><br>
-				<b>Worker</b><br>Mines 2 HP per second.<br><button class='upgradeButton' id='upg1' onclick='buyUpgrade(1)'>Cost: 100 coins</button><br>
-				<b>Bronze Pickaxe</b><br>Power is 1.5x stronger.<br><button class='upgradeButton' id='upg2' onclick='buyUpgrade(2)'>Cost: 100 coins</button><br>
-				<b>Iron Pickaxe</b><br>Power is 1.5x stronger.<br><button class='upgradeButton' id='upg3' onclick='buyUpgrade(3)'>Cost: 100 coins</button>
+				<b style='font-size:24px'>升級</b><br>
+				<b>工人</b><br>每秒挖出2 HP。<br><button class='upgradeButton' id='upg1' onclick='buyUpgrade(1)'>成本: 100錢幣</button><br>
+				<b>銅鎬</b><br>力量強1.5倍。<br><button class='upgradeButton' id='upg2' onclick='buyUpgrade(2)'>成本: 100錢幣</button><br>
+				<b>鐵鎬</b><br>力量強1.5倍。<br><button class='upgradeButton' id='upg3' onclick='buyUpgrade(3)'>成本: 100錢幣</button>
 				<div id='upgrades_rank3'>
 					<b>Gold Pickaxe</b><br>Power is 1.5x stronger.<br><button class='upgradeButton' id='upg4' onclick='buyUpgrade(4)'>Cost: 100 coins</button><br>
 					<b>Fortune</b><br>You get 2x more coins.<br><button class='upgradeButton' id='upg5' onclick='buyUpgrade(5)'>Cost: 100 coins</button>
