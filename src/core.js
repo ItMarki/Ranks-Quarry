@@ -212,7 +212,7 @@ function saveGame() {
 		localStorage.setItem("MTUyMzk5ODg3Njk1MA==",btoa(JSON.stringify(player)))
 		lastSave=new Date().getTime()
 	} catch (e) {
-		console.log('A error has been occurred while saving:')
+		console.log('在保存的時候，發生了一個錯誤:')
 		console.error(e)
 	}
 }
@@ -256,9 +256,9 @@ function loadSave(savefile) {
 		savefile.totalCoins=new Decimal(savefile.totalCoins)
 		savefile.workers.waitUntilDamage=new Decimal(savefile.workers.waitUntilDamage)
 	
-		if (savefile.version>player.version) throw 'This savefile, which has version '+savefile.version+' saved, was incompatible to version '+player.version+'.'
+		if (savefile.version>player.version) throw '這個存檔，內有保存版本'+savefile.version+'，不適合版本'+player.version+'。'
 		else if (savefile.version==player.version) {
-			if (savefile.beta>player.beta) throw 'This savefile, which has beta '+savefile.beta+' saved, was incompatible to beta '+player.beta+'.'			
+			if (savefile.beta>player.beta) throw '這個存檔，內有保存beta'+savefile.beta+'，不適合beta'+player.beta+'。'			
 		}
 		savefile.version=player.version
 		savefile.beta=player.beta
@@ -282,7 +282,7 @@ function loadSave(savefile) {
 			}
 		}
 	} catch (e) {
-		console.log('A error has been occurred while loading:')
+		console.log('在保存的時候，發生了一個錯誤:')
 		console.error(e)
 	}
 		
