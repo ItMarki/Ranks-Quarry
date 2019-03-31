@@ -296,12 +296,12 @@ function exportSave() {
 }
 
 function importSave() {
-	var savefile=prompt('Copy and paste in your exported file and press enter.')
+	var savefile=prompt('複製貼上你導出的存檔，然後按Enter。')
 	if (savefile!='') loadSave(savefile)
 }
 
 function resetGame() {
-	if (confirm("Are you sure to reset the game? Everything would be lost!")) {
+	if (confirm("你肯不肯定重置遊戲？這樣會失去全部！")) {
 		clearInterval(gameLoopInterval)
 		
 		player.playtime=0
@@ -353,7 +353,7 @@ function gameLoop() {
 			try {
 				gameTick()
 			} catch (e) {
-				console.log('A game error has occured:')
+				console.log('發生了一個遊戲錯誤:')
 				console.error(e)
 			}
 			tickSpeed=Math.max((new Date().getTime()-startTime)*0.2+tickSpeed*0.8,maxMillisPerTick)
