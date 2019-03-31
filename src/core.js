@@ -72,11 +72,11 @@ function format(value) {
 
 function formatTime(s) {
 	if (s < 1) {
-		if (s < 0.002) return '1 millisecond'
-		return Math.floor(s*1000)+' milliseconds'
+		if (s < 0.002) return '1毫秒'
+		return Math.floor(s*1000)+'毫秒'
 	} else if (s < 59.5) {
-		if (s < 1.005) return '1 second'
-		return s.toPrecision(2)+' seconds'
+		if (s < 1.005) return '1 秒'
+		return s.toPrecision(2)+'秒'
 	} else if (s < Number.POSITIVE_INFINITY) {
 		var timeFormat=''
 		var lastTimePart=''
@@ -95,13 +95,13 @@ function formatTime(s) {
 							needComma=true
 						}
 					}
-					lastTimePart=s+(s==1?' second':' seconds')
+					lastTimePart=s+(s==1?'秒':'秒')
 				}
 			} else if (id=='year') {
 				var amount=Math.floor(s/31556952)
 				if (amount>0) {
 					s-=amount*31556952
-					lastTimePart=format(amount,2,1)+(amount==1?' year':' years')
+					lastTimePart=format(amount,2,1)+(amount==1?'年':'年')
 				}
 			} else {
 				var amount=Math.floor(s/timeframes[id])
@@ -116,13 +116,13 @@ function formatTime(s) {
 							needComma=true
 						}
 					}
-					lastTimePart=amount+' '+id+(amount==1?'':'s')
+					lastTimePart=amount+' '+id+(amount==1?'':'')
 				}
 			}
 		}
-		return timeFormat+(needComma?',':'')+(needAnd?' and ':'')+lastTimePart
+		return timeFormat+(needComma?'':'')+(needAnd?'':'')+lastTimePart
 	} else {
-		return 'eternity'
+		return '永恆'
 	}
 }
 
